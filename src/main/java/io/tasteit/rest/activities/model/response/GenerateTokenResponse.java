@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @EqualsAndHashCode
 @Getter
 @ToString
-public class TokenResponse {
+public class GenerateTokenResponse {
 
     @JsonProperty(required = true)
     @Nonnull private String tokenType;
