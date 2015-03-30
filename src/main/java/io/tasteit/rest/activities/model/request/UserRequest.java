@@ -1,6 +1,4 @@
-package io.tasteit.rest.activities.model;
-
-import javax.xml.bind.annotation.XmlRootElement;
+package io.tasteit.rest.activities.model.request;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -12,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-@XmlRootElement(name="meal_type_open_hours")
 @JsonInclude(value=Include.NON_NULL)
 
 @NoArgsConstructor
@@ -20,12 +17,8 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @Setter
 @EqualsAndHashCode
 @ToString
-public class MealTypeOpenHours {
+public class UserRequest {
 
     @JsonProperty(required = true)
-    private String mealType;
-    @JsonProperty(required = true)
-    private String startTime;
-    @JsonProperty(required = true)
-    private String endTime;
+    private Long userPrincipal;
 }

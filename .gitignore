@@ -8,6 +8,8 @@
 *.war
 *.ear
 
+.settings/*
+
 # Maven Build Target #
 target/*
 

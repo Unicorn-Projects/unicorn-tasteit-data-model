@@ -1,9 +1,7 @@
-package io.tasteit.rest.activities.model;
+package io.tasteit.rest.activities.model.request;
 
+import java.time.DayOfWeek;
 import java.util.List;
-import java.util.Map;
-
-import javax.xml.bind.annotation.XmlRootElement;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -15,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-@XmlRootElement(name="restaurant_detail")
 @JsonInclude(value=Include.NON_NULL)
 
 @NoArgsConstructor
@@ -23,15 +20,21 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @Setter
 @EqualsAndHashCode
 @ToString
-public class RestaurantDetail {
+public class GetCuisinesForRestaurantRequest {
 
-    private List<String> imagesUrls;
     @JsonProperty(required = true)
-    private Address address;
+    private String restaurantId;
     @JsonProperty(required = true)
-    private String contact;
+    private DayOfWeek dayOfWeek;
     @JsonProperty(required = true)
-    private String website;
-    @JsonProperty(required = true)
-    private Map<Integer, List<MealTypeOpenHours>> openHours;
+    private Float localTime;
+    
+    private Integer offset;
+    private Integer limit;
+    private List<String> cuisineCategories;
+    private List<String> cuisineTypes;
+    private List<String> mealTypes;
+    private Boolean vegetarian;
+    private Boolean glutenFree;
+    private Boolean serveNowOnly;
 }

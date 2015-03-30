@@ -17,6 +17,12 @@ public class InternalServerErrorException extends RuntimeException {
         this.errorDescription = ERROR_DESCRIPTION;
     }
     
+    public InternalServerErrorException() {
+        super();
+        this.errorCode = ERROR_CODE;
+        this.errorDescription = ERROR_DESCRIPTION;
+    }
+    
     public String getErrorCode() {
         return errorCode;
     }
